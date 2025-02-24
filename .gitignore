@@ -4,6 +4,9 @@
 /target
 /out
 
+# Archivos .class
+*.class
+
 # Archivos de configuración de IntelliJ IDEA
 .idea
 *.iml
@@ -25,29 +28,4 @@ buildNumber.properties
 build/
 
 # Archivos generados por Visual Studio Code
-.vscode/
-
-# Archivos de configuración del sistema operativo
-.DS_Store
-Thumbs.db
-
-# Archivos de logs
-*.log
-
-# Archivos de empaquetamiento
-*.jar
-*.war
-*.ear
-
-# Archivos generados por el entorno de pruebas
-/test-output/
-*.ser
-
-# Archivos de configuración de sistemas CI/CD
-/.travis.yml
-/.circleci/
-/.gitlab-ci.yml
-/.github/
-
-# Archivos de entorno
-.env
+.
