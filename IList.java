@@ -3,6 +3,5 @@
  */
 public interface IList<T> {
     public void add(T item);       
-    public T remove(int index);    
-    public T peek(int index);
+    public T remove(int index);
 }
