@@ -6,9 +6,7 @@
  * Solo se utilizaron 5 metodos de la pagina de referencia.
  */
 
-
-
-public class DLList<T> implements IList<T> {
+public class DLList<T> implements IList<T>,IStack<T> {
 
     private Node<T> head;
     private Node<T> tail;
@@ -110,32 +108,11 @@ public class DLList<T> implements IList<T> {
         }
     }
 
-    /**
-     * Metodo para obtener el valor de un elemento de la lista doblemente enlazada
-     * en una posicion especifica.
-     * @param index posicion del elemento
-     * @return el valor del elemento en la posicion especifica
-     */
-    
-    public T peek(int index) {
-        if (index == 0) {
-            return head.getValue();
-        } else {
-            Node<T> current = head;
-            int currentIndex = 0;
-            while (current != null && currentIndex < index) {
-                current = current.getNext();
-                currentIndex++;
-            }
-            if (current == null) {
-                return tail.getValue();
-            } else {
-                return current.getValue();
-            }
-        }
-        
-        
-        
+    public void push(T value){
+        add(value);
+    }
 
+    public T pop(){
+        return deleteLeft();
     }
 }

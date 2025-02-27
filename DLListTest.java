@@ -2,7 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 
-public class UnitTestsDLL {
+public class DLListTest {
 
     private DLList<Integer> list;
 
@@ -14,7 +14,6 @@ public class UnitTestsDLL {
         list.add(3);
         list.add(4);
         list.add(5);
-
     }
 
     @Test
@@ -38,20 +37,4 @@ public class UnitTestsDLL {
     public void shouldBeAbletoRemoveAnEspecificItem() {
         assertEquals(4, (int) list.remove(3));
     }
-
-    @Test
-    public void shouldBeAbletoPeekAnEspecificItem() {
-        assertEquals(3, (int) list.peek(2));
-    }
-
-
-
-
-
-
-
-
-    
-
-    
 }

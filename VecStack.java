@@ -1,7 +1,7 @@
 import java.util.Vector;
 
 public class VecStack<T> implements IStack<T> {
-   protected Vector<T> data;
+    protected Vector<T> data;
 
 	public VecStack(){
 		data = new Vector<T>();

@@ -1,4 +1,4 @@
-public class LList<T> implements IList<T> {
+public class LList<T> implements IList<T>,IStack<T> {
     protected Node<T> head;
     protected int count;
     
@@ -11,7 +11,7 @@ public class LList<T> implements IList<T> {
         head = new Node<T>(value, head);
         count++;
     }
-    
+
     public T remove(int index){
         if(index < 0 || index >= count){
             return null;
@@ -29,6 +29,14 @@ public class LList<T> implements IList<T> {
         }
         count--;
         return finger.getValue();
+    }
+
+    public void push(T value){
+        add(value);
+    }
+
+    public T pop(){
+        return remove(0);
     }
 
 } 
