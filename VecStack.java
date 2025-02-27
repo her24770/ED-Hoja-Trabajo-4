@@ -12,10 +12,6 @@ public class VecStack<T> implements IStack<T> {
 	}
 
 	public T pop(){
-		return data.remove(size()-1);
+		return data.remove(data.size()-1);
 	}
-
-    public int size(){
-        return data.size();
-    }
 }
