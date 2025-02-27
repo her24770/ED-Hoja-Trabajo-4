@@ -4,62 +4,48 @@
 
 public class Node<T> {
 
-    private T value; 
-    private Node<T> next; 
-    private Node<T> previous; 
-
-    /**
-     * Constructor de la clase Node
-     * @param value Valor del nodo
-     */
-    public Node(T value) {
-        this.value = value;
-        this.next = null;
-        this.previous = null;
+    protected T value; 
+    protected Node<T> nodeNext; 
+    protected Node<T> nodePrevious; 
+ 
+    //constructor para LinkedList
+    public Node(T v, Node<T> next){
+        value = v;
+        nodeNext = next;
     }
 
-    
-    public T getValue() {
-        return value;
+    //constructor para DoublyLinkedList
+    public Node(T v, Node<T> next, Node<T> previous){
+        value = v;
+        nodeNext = next;
+        nodePrevious = previous;
     }
-    
-    /**
-     * Setter del valor del nodo
-     * @param value Valor del nodo
-     */
-    public void setValue(T value) {
-        this.value = value;
+ 
+    public Node(T v){
+       this(v,null);
     }
-
-    /**
-     * Getter del siguiente nodo
-     * @return Siguiente nodo
-     */
-    public Node<T> getNext() {
-        return next;
+ 
+    public Node<T> getNext(){
+       return nodeNext;
+    }
+ 
+    public void setPrevious(Node<T> next){
+        nodeNext = next;
     }
 
-    /**
-     * Setter del siguiente nodo
-     * @param next Siguiente nodo
-     */
-    public void setNext(Node<T> next) {
-        this.next = next;
+    public Node<T> getPrevious(){
+        return nodeNext;
+     }
+  
+     public void setNext(Node<T> next){
+         nodeNext = next;
+     }
+ 
+    public T getValue(){
+       return value;
     }
-
-    /**
-     * Getter del nodo anterior
-     * @return Nodo anterior
-     */
-    public Node<T> getPrevious() {
-        return previous;
-    }
-
-    /**
-     * Setter del nodo anterior
-     * @param previous Nodo anterior
-     */
-    public void setPrevious(Node<T> previous) {
-        this.previous = previous;
+ 
+    public void setValue(T v){
+       value = v;
     }
 }
