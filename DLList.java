@@ -113,6 +113,6 @@ public class DLList<T> implements IList<T>,IStack<T> {
     }
 
     public T pop(){
-        return deleteLeft();
+        return deleteRight();
     }
 }
