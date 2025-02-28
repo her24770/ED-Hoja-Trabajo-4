@@ -6,7 +6,7 @@
  * Solo se utilizaron 5 metodos de la pagina de referencia.
  */
 
-public class DLList<T> implements IList<T>,IStack<T> {
+public class DLList<T> implements IStack<T>{
 
     private Node<T> head;
     private Node<T> tail;
@@ -18,7 +18,7 @@ public class DLList<T> implements IList<T>,IStack<T> {
      * @param item elemento a agregar
      */
     
-    public void add(T item) {
+    public void push(T item) {
         Node<T> newNode = new Node<T>(item);
         if (head == null) {
             head = newNode;
@@ -85,7 +85,7 @@ public class DLList<T> implements IList<T>,IStack<T> {
      * @return el valor del elemento eliminado
      */
 
-    public T remove(int index) {
+    public T pop(int index) {
         if (index == 0) {
             return deleteLeft();
         } else {
@@ -106,13 +106,5 @@ public class DLList<T> implements IList<T>,IStack<T> {
                 return value;
             }
         }
-    }
-
-    public void push(T value){
-        add(value);
-    }
-
-    public T pop(){
-        return deleteLeft();
     }
 }

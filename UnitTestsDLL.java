@@ -2,24 +2,25 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 
-public class DLListTest {
+public class UnitTestsDLL {
 
     private DLList<Integer> list;
 
     @Before
     public void setUp() {
         list = new DLList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
+        list.push(1);
+        list.push(2);
+        list.push(3);
+        list.push(4);
+        list.push(5);
+
     }
 
     @Test
 
     public void shouldBeAbletoAddElement() {
-        list.add(6);
+        list.push(6);
         assertEquals(6, (int) list.deleteRight());
     }
 
@@ -35,6 +36,6 @@ public class DLListTest {
 
     @Test
     public void shouldBeAbletoRemoveAnEspecificItem() {
-        assertEquals(4, (int) list.remove(3));
+        assertEquals(4, (int) list.pop(3));
     }
 }
