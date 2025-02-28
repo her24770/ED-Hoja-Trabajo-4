@@ -13,7 +13,10 @@ public class ArrayLStack <T> implements IStack<T>{
     }
 
     public T pop(){
-        return data.removeLast();
+        if(data.size() != 0){
+            return data.removeLast();
+        }
+        return null;
     }
 
     public int size(){

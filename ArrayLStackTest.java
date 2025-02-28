@@ -14,7 +14,7 @@ public class ArrayLStackTest {
     }
 
     @Test
-    public void shoulBeAbleToPush(){
+    public void shouldBeAbleToPush(){
     stack.push(15);
     stack.push(10);
 
@@ -26,6 +26,12 @@ public class ArrayLStackTest {
         stack.push(15);
         stack.push(10);
 
-        assertEquals(stack.pop(), 0);
+        assertEquals(stack.pop(), Integer.valueOf(10));
     }
+
+    @Test 
+    public void shouldReturnNull(){
+        assertEquals(null, stack.pop());
+    }
+
 }
