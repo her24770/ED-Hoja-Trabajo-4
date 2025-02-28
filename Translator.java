@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 public class Translator {
 
+    /**
+     * Método para leer un archivo y retornar un array con las líneas
+     * @param nameFile nombre del archivo
+     * @return arrays con las expresiones infix
+     */
+
     public ArrayList<String> reader(String nameFile) {
         ArrayList<String> lines = new ArrayList<>();
 
@@ -19,11 +25,24 @@ public class Translator {
         return lines;
     }
 
+    /**
+     * Método para verificar si un string es un número
+     * @param str string a verificar
+     * @return true si es un número, false si no
+     */
+
     private boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");
     }
 
-    // Método para asignar prioridad a los operadores
+    
+    /**
+     * Método para obtener la precedencia de un operador
+     * @param op operador
+     * @return precedencia
+     */
+
+
     private int precedence(String op) {
         switch (op) {
             case "+": case "-": return 1;
@@ -32,6 +51,12 @@ public class Translator {
             default: return -1;
         }
     }
+
+    /**
+     * Método para convertir una expresión infix dentro de un array a postfix dentro de un array
+     * @param infix expresión infix en un array
+     * @return expresión postfix en un array
+     */
 
 
     public ArrayList<String> infixToPostfix(ArrayList<String> infix) {
