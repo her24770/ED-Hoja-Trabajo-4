@@ -31,6 +31,11 @@ public class CalculatorTest {
     }
 
     @Test
+    public void shouldBeAbleToPower(){
+        assertEquals(calculator.operation('^', 2.0, 3.0), Double.valueOf(8.0));   
+    }
+
+    @Test
     public void shouldReturnNull(){
         assertEquals(calculator.operation('0', 5.0, 3.0), null);
     }
