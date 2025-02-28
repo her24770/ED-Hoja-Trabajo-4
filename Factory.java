@@ -1,10 +1,15 @@
 public class Factory {
     
-    // Método para crear implementaciones de IStack
+/**
+ * Factory para instancia de Stacks
+ * @param <T> 
+ * @param option tipo de stack elegido por usuario
+ * @return instancia de stack
+ */
 public static <T> IStack<T> stackFactory(String option) {
     switch (option) {
         case "1":
-            return new VecStack<T>();  // Retorna una implementación de IStack
+            return new VecStack<T>();  
         case "2":
             return new ArrayLStack<T>();  // Retorna una implementación de IStack
         case "3":
@@ -16,13 +21,18 @@ public static <T> IStack<T> stackFactory(String option) {
     }
 }
 
-// Método para crear implementaciones de IList
+/**
+ * Factory especifico para los Stacks de List
+ * @param <T>
+ * @param option Stack seleccionado por usuario
+ * @return instancia de stack
+ */
 public static <T> IStack<T> listFactory(String option) {
     switch (option) {
         case "3.1":
-            return new LList<T>();  // Retorna una implementación de IList
+            return new LList<T>(); 
         case "3.2":
-            return new DLList<T>();  // Retorna una implementación de IList
+            return new DLList<T>();  
         default:
             throw new IllegalArgumentException("Opción no válida: " + option);
     }
