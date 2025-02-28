@@ -37,7 +37,14 @@ public class Translator {
         return str.matches("-?\\d+(\\.\\d+)?");
     }
 
-    // Método para asignar prioridad a los operadores
+    
+    /**
+     * Método para obtener la precedencia de un operador
+     * @param op operador
+     * @return precedencia
+     */
+
+
     private int precedence(String op) {
         switch (op) {
             case "+": case "-": return 1;
@@ -46,6 +53,12 @@ public class Translator {
             default: return -1;
         }
     }
+
+    /**
+     * Método para convertir una expresión infix dentro de un array a postfix dentro de un array
+     * @param infix expresión infix en un array
+     * @return expresión postfix en un array
+     */
 
 
     public ArrayList<String> infixToPostfix(ArrayList<String> infix) {
