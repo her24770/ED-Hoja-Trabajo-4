@@ -72,12 +72,12 @@ public class Translator {
                 stack.push(ch);
             } else if (ch.equals(")")) { // Si es ')', desapilar hasta '('
                 while (!stack.isEmpty() && !stack.peek().equals("(")) {
-                    postfix.add(stack.pop(0));
+                    postfix.add(stack.pop());
                 }
-                stack.pop(0);
+                stack.pop();
             } else { // Operador
                 while (!stack.isEmpty() && precedence(ch) <= precedence(stack.peek())) {
-                    postfix.add(stack.pop(0));
+                    postfix.add(stack.pop());
                 }
                 stack.push(ch);
             }
@@ -85,7 +85,7 @@ public class Translator {
 
         // Vaciar la pila al final
         while (!stack.isEmpty()) {
-            postfix.add(stack.pop(0));
+            postfix.add(stack.pop());
         }
 
         return postfix;
