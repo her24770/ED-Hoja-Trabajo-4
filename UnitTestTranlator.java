@@ -52,9 +52,11 @@ public class UnitTestTranlator {
 
     @Test
     public void shouldBeAbleToReadFile() {
-        ArrayList<String> actual = translator.reader("test.txt");
+        ArrayList<ArrayList<String>> actual = translator.reader("test.txt");
         for (int i = 0; i < actual.size(); i++) {
-            assertEquals(expectedRead.get(i), actual.get(i));
+            for (int j = 0; j < actual.get(i).size(); j++) {
+                assertEquals(expectedRead.get(j), actual.get(i).get(j));
+            }
         }
 
     }
