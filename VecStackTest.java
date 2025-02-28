@@ -14,7 +14,25 @@ public class VecStackTest {
 
     @Test
     public void shouldBeAbleToPush(){
-        
+        stack.push(1);
+        assertEquals(stack.isEmpty(), false);
     }
 
+    @Test 
+    public void shouldBeAbleToPop(){
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        assertEquals(stack.pop(), Integer.valueOf(3));
+    }
+
+    @Test
+    public void shouldBeAbleToPeek(){
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        assertEquals(stack.pop(), Integer.valueOf(3));
+    }
 }

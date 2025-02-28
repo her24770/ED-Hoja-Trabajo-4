@@ -13,6 +13,8 @@ public class Calculator<T> {
                 return (T) (Double) ((Double) value1 / (Double) value2);
             case '%':       
                 return (T) (Double) ((Double) value1 % (Double) value2);
+            case '^':
+                return (T) (Double) Math.pow((Double) value1, (Double) value2);
             default:
                 return null;
         }
