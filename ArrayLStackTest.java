@@ -2,9 +2,6 @@ import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class ArrayLStackTest {
     private ArrayLStack<Integer> stack; 
 
