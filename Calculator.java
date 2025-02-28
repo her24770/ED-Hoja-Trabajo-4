@@ -1,5 +1,6 @@
 public class Calculator<T> {
-   
+
+
     public T operation(char operator, T value1, T value2) {
         switch (operator) {
             case '+':
