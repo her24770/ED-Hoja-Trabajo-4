@@ -54,7 +54,7 @@ public class Main {
     
 
     public static double evaluatePostfix(ArrayList<String> postfix, IStack<String> stack) {
-        Calculator<Double> calculator = new Calculator<>();
+        Calculator<Double> calculator = Calculator.getInstance();
     
         for (String token : postfix) {
             if (isNumeric(token)) {
