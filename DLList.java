@@ -20,34 +20,19 @@ public class DLList<T> implements IStack<T>{
     
      public void push(T value) {
         Node<T> newNode = new Node<>(value);
-        if (head == null) {  // Si la lista está vacía
-            head = newNode;
-            tail = newNode;
-        } else {
-            newNode.setNext(head);
-            head.setPrevious(newNode);
-            head = newNode;
-        }
-        count++;
+        newNode.setNext(head); 
+        head = newNode;        
+        count++;               
     }
-    
 
     public T pop() {
-        if (head == null) {  // Si la lista está vacía
-            return null;  // Devuelve null si no hay elementos
+        if (head == null) { 
+            return null;
         }
-        T value = head.getValue();  // Guarda el valor del nodo en la cabeza
-        if (head == tail) {  // Si solo hay un elemento en la lista
-            head = null;
-            tail = null;
-        } else {
-            head = head.getNext();  // Mueve la cabeza al siguiente nodo
-            if (head != null) {
-                head.setPrevious(null);  // Elimina la referencia al nodo anterior
-            }
-        }
-        count--;
-        return value;  // Devuelve el valor eliminado
+        T value = head.getValue();  
+        head = head.getNext();     
+        count--;                    
+        return value;          
     }
     
 }
