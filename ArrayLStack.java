@@ -16,4 +16,7 @@ public class ArrayLStack <T> implements IStack<T>{
         return data.removeLast();
     }
 
+    public int size(){
+        return data.size();
+    }
 }
