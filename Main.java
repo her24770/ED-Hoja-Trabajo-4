@@ -55,21 +55,35 @@ public class Main {
 
     public static double evaluatePostfix(ArrayList<String> postfix, IStack<String> stack) {
         Calculator<Double> calculator = new Calculator<>();
-
+    
         for (String token : postfix) {
             if (isNumeric(token)) {
                 stack.push(token); 
             } else {
-                double operand2 = Double.parseDouble(stack.pop());
-                double operand1 = Double.parseDouble(stack.pop());
-
+                String val2 = stack.pop();
+                String val1 = stack.pop();
+                
+                if (val1 == null || val2 == null) {
+                    System.out.println("Error: Intento de operar con valores nulos en la pila.");
+                    return Double.NaN;  // Retornar un valor especial que indica error
+                }
+    
+                double operand2 = Double.parseDouble(val2);
+                double operand1 = Double.parseDouble(val1);
+    
                 double result = calculator.operation(token.charAt(0), operand1, operand2);
-
+    
                 stack.push(String.valueOf(result));
             }
         }
-        return Double.parseDouble(stack.pop());
+        String finalResult = stack.pop();
+        if (finalResult == null) {
+            System.out.println("Error: No hay resultado final en la pila.");
+            return Double.NaN;
+        }
+        return Double.parseDouble(finalResult);
     }
+    
 
     private static boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");

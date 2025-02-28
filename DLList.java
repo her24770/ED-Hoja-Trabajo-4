@@ -30,10 +30,11 @@ public class DLList<T> implements IStack<T>{
         }
         count++;
     }
+    
 
     public T pop() {
         if (head == null) {  // Si la lista está vacía
-            return null;
+            return null;  // Devuelve null si no hay elementos
         }
         T value = head.getValue();  // Guarda el valor del nodo en la cabeza
         if (head == tail) {  // Si solo hay un elemento en la lista
@@ -42,10 +43,11 @@ public class DLList<T> implements IStack<T>{
         } else {
             head = head.getNext();  // Mueve la cabeza al siguiente nodo
             if (head != null) {
-                head.setPrevious(null);  // Elimina la referencia al nodo anterior solo si no es null
+                head.setPrevious(null);  // Elimina la referencia al nodo anterior
             }
         }
         count--;
         return value;  // Devuelve el valor eliminado
     }
+    
 }

@@ -7,9 +7,9 @@ public static <T> IStack<T> stackFactory(String option) {
             return new VecStack<T>();  // Retorna una implementación de IStack
         case "2":
             return new ArrayLStack<T>();  // Retorna una implementación de IStack
-        case "3.1":
+        case "3":
             return  listFactory("3.1");  // Convierte la instancia de IList a IStack
-        case "3.2":
+        case "4":
             return  listFactory("3.2");  // Convierte la instancia de IList a IStack
         default:
             throw new IllegalArgumentException("Opción no válida: " + option);
