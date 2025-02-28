@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
     
-    private Calculator<Double> calculator = new Calculator<Double>();
+    private Calculator<Double> calculator = Calculator.getInstance();
     
     @Test
     public void shouldBeAbleToAdd(){
