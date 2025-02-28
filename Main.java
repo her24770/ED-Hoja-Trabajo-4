@@ -9,10 +9,22 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Translator  translator = new Translator();
-        ArrayList<String> linesString =translator.reader("datos.txt");
-        for (String line : linesString) {
-            System.out.println(line);
+        Translator translator = new Translator();
+
+        ArrayList<ArrayList<String>> lineas = translator.reader("datos.txt");
+        ArrayList<ArrayList<String>> resultadoPostfix = new ArrayList<>();
+
+        for (ArrayList<String> infix : lineas) {
+            ArrayList<String> postfix = translator.infixToPostfix(infix);
+            resultadoPostfix.add(postfix);
         }
+
+        // Imprimir el resultado de las líneas convertidas a postfix
+        for (ArrayList<String> postfix : resultadoPostfix) {
+            System.out.println(postfix);
+        }
+
+
+        // 
     }   
 }

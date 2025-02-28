@@ -5,19 +5,33 @@ import java.util.ArrayList;
 
 public class Translator {
 
-    public ArrayList<String> reader(String nameFile) {
-        ArrayList<String> lines = new ArrayList<>();
+    public ArrayList<ArrayList<String>> reader(String nameFile) {
+        ArrayList<ArrayList<String>> lineas = new ArrayList<>();  // Lista para almacenar todas las líneas
 
         try (BufferedReader br = new BufferedReader(new FileReader(nameFile))) {
             String line;
             while ((line = br.readLine()) != null) {
-                lines.add(line);
+                // Dividir la línea por los espacios
+                String[] tokens = line.split("\\s+");  // Esto divide la línea por espacios (uno o más)
+                ArrayList<String> tokensEnLinea = new ArrayList<>();
+                
+                // Agregar los tokens a la lista de palabras para esa línea
+                for (String token : tokens) {
+                    tokensEnLinea.add(token);
+                }
+
+                // Agregar la lista de tokens de esa línea a la lista general
+                lineas.add(tokensEnLinea);
             }
         } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
-        return lines;
+
+        return lineas;
     }
+
+
+    
 
     private boolean isNumeric(String str) {
         return str.matches("-?\\d+(\\.\\d+)?");
