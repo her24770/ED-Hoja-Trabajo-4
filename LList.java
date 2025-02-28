@@ -7,27 +7,21 @@ public class LList<T> implements IStack<T> {
         count = 0;
     }
     
-    public void push(T value){
-        head = new Node<T>(value, head);
-        count++;
+    public void push(T value) {
+        Node<T> newNode = new Node<>(value);
+        newNode.setNext(head); 
+        head = newNode;        
+        count++;               
     }
 
-    public T pop(int index){
-        if(index < 0 || index >= count){
+    public T pop() {
+        if (head == null) { 
             return null;
         }
-        Node<T> finger = head;
-        if(index == 0){
-            head = head.getNext();
-        }else{
-            Node<T> previous = null;
-            for(int i = 0; i < index; i++){
-                previous = finger;
-                finger = finger.getNext();
-            }
-            previous.setNext(finger.getNext());
-        }
-        count--;
-        return finger.getValue();
+        T value = head.getValue();  
+        head = head.getNext();     
+        count--;                    
+        return value;          
     }
+    
 } 

@@ -12,7 +12,7 @@ public class ArrayLStack <T> implements IStack<T>{
         data.add(value);
     }
 
-    public T pop(int index){
+    public T pop(){
         return data.removeLast();
     }
 

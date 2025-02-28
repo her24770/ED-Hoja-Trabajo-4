@@ -86,6 +86,7 @@ public class DLList<T> implements IStack<T>{
      */
 
     public T pop(int index) {
+
         if (index == 0) {
             return deleteLeft();
         } else {
