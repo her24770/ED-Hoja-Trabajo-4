@@ -14,4 +14,13 @@ public class VecStack<T> implements IStack<T> {
 	public T pop(int index){
 		return data.remove(data.size()-1);
 	}
+
+	public boolean isEmpty(){
+		return data.isEmpty();
+	}
+	
+	public T peek(){
+		return data.get(data.size()-1);
+	}
+	
 }
